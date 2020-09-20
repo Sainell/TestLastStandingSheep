@@ -1,5 +1,88 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &963194225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 963194228}
+  - component: {fileID: 963194227}
+  - component: {fileID: 963194226}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &963194228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_LocalRotation: {x: 0.26196522, y: 0.000000029802322, z: 0.000000007450581, w: 0.96507734}
+  m_LocalPosition: {x: -0.00000056837695, y: 1.7680006, z: -1.3339996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4405990468133924}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 30.373001, y: 0, z: 0}
+--- !u!20 &963194227
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &963194226
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
 --- !u!1 &1013895421537464
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,119 +145,6 @@ Transform:
   m_Father: {fileID: 4655925470368294}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1120798025891160
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4694791614049002}
-  - component: {fileID: 33683324962294986}
-  - component: {fileID: 23421052206513490}
-  - component: {fileID: 65918033043393548}
-  - component: {fileID: 114231187416806248}
-  m_Layer: 0
-  m_Name: sheep_leg
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &4694791614049002
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120798025891160}
-  m_LocalRotation: {x: -0.72539765, y: -0.10046469, z: -0.34457377, w: 0.58734494}
-  m_LocalPosition: {x: 0.002, y: 0.0013621739, z: -0.19071573}
-  m_LocalScale: {x: 68.11276, y: 68.1129, z: 68.11282}
-  m_Children: []
-  m_Father: {fileID: 4405990468133924}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -67.125, y: 100.762, z: -138.21701}
---- !u!33 &33683324962294986
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120798025891160}
-  m_Mesh: {fileID: 4300000, guid: ee76b69a4be634a4999015f986041b06, type: 3}
---- !u!23 &23421052206513490
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120798025891160}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: e2996dca86373784598ea34ff1874a94, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!65 &65918033043393548
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120798025891160}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0019429455, y: 0.0044055623, z: 0.001144517}
-  m_Center: {x: -0.00026367087, y: 0.00081360404, z: 0.00032728573}
---- !u!114 &114231187416806248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120798025891160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38dc88eecf50e87429e80511295c2e60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Leg of lamb
-  Image: {fileID: 21300000, guid: c6dc88592953a2f4f9445a4fd0decc93, type: 3}
-  InteractText: Press F to pickup the food
-  ItemType: 1
-  PickPosition: {x: 0, y: 0, z: 0}
-  PickRotation: {x: 0, y: 0, z: 0}
-  DropRotation: {x: 0, y: 0, z: 0}
-  UseItemAfterPickup: 0
-  FoodPoints: 20
 --- !u!1 &1168718433363380
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,119 +270,6 @@ Transform:
   m_Father: {fileID: 4632569826289224}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1253218787766072
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4008439495370324}
-  - component: {fileID: 33544146687065010}
-  - component: {fileID: 23108620220054436}
-  - component: {fileID: 65003785779457464}
-  - component: {fileID: 114698081657331474}
-  m_Layer: 0
-  m_Name: sheep_leg_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &4008439495370324
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253218787766072}
-  m_LocalRotation: {x: -0.062086202, y: -0.5594542, z: -0.8006738, w: 0.20512864}
-  m_LocalPosition: {x: -0.046, y: 0.001362174, z: 0.314}
-  m_LocalScale: {x: 68.112755, y: 68.11287, z: 68.11283}
-  m_Children: []
-  m_Father: {fileID: 4405990468133924}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -67.125, y: -19.553001, z: -138.21701}
---- !u!33 &33544146687065010
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253218787766072}
-  m_Mesh: {fileID: 4300000, guid: ee76b69a4be634a4999015f986041b06, type: 3}
---- !u!23 &23108620220054436
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253218787766072}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: e2996dca86373784598ea34ff1874a94, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!65 &65003785779457464
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253218787766072}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0019429455, y: 0.0044055623, z: 0.001144517}
-  m_Center: {x: -0.00026367087, y: 0.00081360404, z: 0.00032728573}
---- !u!114 &114698081657331474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253218787766072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38dc88eecf50e87429e80511295c2e60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Leg of lamb
-  Image: {fileID: 21300000, guid: c6dc88592953a2f4f9445a4fd0decc93, type: 3}
-  InteractText: Press F to pickup the food
-  ItemType: 1
-  PickPosition: {x: 0, y: 0, z: 0}
-  PickRotation: {x: 0, y: 0, z: 0}
-  DropRotation: {x: 0, y: 0, z: 0}
-  UseItemAfterPickup: 0
-  FoodPoints: 20
 --- !u!1 &1289827257816052
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,8 +344,6 @@ GameObject:
   - component: {fileID: 4405990468133924}
   - component: {fileID: 95144379055148904}
   - component: {fileID: 136834963823365008}
-  - component: {fileID: 114743782183814366}
-  - component: {fileID: 195094338865217482}
   - component: {fileID: 54272747306353502}
   m_Layer: 0
   m_Name: Sheep
@@ -504,17 +359,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442330619866686}
-  m_LocalRotation: {x: -0, y: 0.32299334, z: -0, w: 0.94640124}
+  m_LocalRotation: {x: 0, y: 0.32299253, z: 0, w: 0.9464016}
   m_LocalPosition: {x: -5.04, y: 0.00000011920929, z: -0.15323496}
   m_LocalScale: {x: 1.4681542, y: 1.4681543, z: 1.4681543}
   m_Children:
   - {fileID: 4938041482547880}
   - {fileID: 4362136176569430}
-  - {fileID: 4694791614049002}
-  - {fileID: 4008439495370324}
+  - {fileID: 963194228}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 69.902, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 37.688004, z: 0}
 --- !u!95 &95144379055148904
 Animator:
   serializedVersion: 3
@@ -548,45 +402,6 @@ CapsuleCollider:
   m_Height: 0.8666345
   m_Direction: 2
   m_Center: {x: 0, y: 0.27477634, z: 0.066682756}
---- !u!114 &114743782183814366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442330619866686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 686f8b95f5be90444b6c67d59ff9d92f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  EnemyDistanceRun: 4
-  ItemsDeadState:
-  - {fileID: 1120798025891160}
-  - {fileID: 1253218787766072}
---- !u!195 &195094338865217482
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442330619866686}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 2
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 400
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!54 &54272747306353502
 Rigidbody:
   m_ObjectHideFlags: 0
