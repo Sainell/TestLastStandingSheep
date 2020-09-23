@@ -12,6 +12,7 @@ namespace LastStandingSheep
         public Rigidbody Rigidbody { get; private set; }
         public GameObject MainCamera { get; private set; }
         public CinemachineVirtualCamera VirtualCamera {get; private set;}
+        public Animator Animator { get; private set; }
         
         
         
@@ -28,6 +29,7 @@ namespace LastStandingSheep
             characterData.CharacterModel = this;
             MainCamera = mainCamera;
             VirtualCamera = virtualCamera;
+            Animator = prefab.GetComponent<Animator>();
         }
 
         #endregion

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace LastStandingSheep
 {
@@ -18,7 +19,13 @@ namespace LastStandingSheep
         #endregion
 
 
-        #region Properties
+        #region Events
+
+        public static Action OnJump;
+        public static Action OnWalk;
+        public static Action OnDie;
+        public static Action OnIdle;
+
 
         public bool IsInputMove
         {
@@ -34,11 +41,12 @@ namespace LastStandingSheep
 
                     if (_isInputMove)
                     {
-                       // event move start
+                        // event move start
+                        OnWalk?.Invoke();
                     }
                     else
                     {
-                       //event move stop
+                        OnIdle?.Invoke();
                     }
                 }
             }
@@ -59,10 +67,12 @@ namespace LastStandingSheep
                     if (_isInputJump)
                     {
                         //event start jump
+                        OnJump?.Invoke();
                     }
                     else
                     {
                         //event stop jump
+                        OnIdle?.Invoke();
                     }
                 }
             }
