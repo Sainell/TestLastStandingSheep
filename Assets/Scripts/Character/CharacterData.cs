@@ -2,7 +2,7 @@
 
 namespace LastStandingSheep
 {
-    [CreateAssetMenu(fileName = "NewModel", menuName = "CreateData/CharacterData", order = 0)]
+    [CreateAssetMenu(fileName = "NewData", menuName = "CreateData/CharacterData", order = 0)]
     public sealed class CharacterData : ScriptableObject
     {
         #region Fields

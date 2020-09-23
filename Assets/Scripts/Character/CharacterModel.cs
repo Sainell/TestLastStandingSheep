@@ -34,7 +34,7 @@ namespace LastStandingSheep
 
         #endregion
 
-        #region Metods
+        #region Methods
 
         public void Execute()
         {

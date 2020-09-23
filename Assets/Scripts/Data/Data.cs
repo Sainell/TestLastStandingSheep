@@ -8,12 +8,12 @@ namespace LastStandingSheep
     {
         #region Fields
 
-        // [SerializeField] private string _sphereDataPath; example
         [SerializeField] private string _characterDataPath;
+        [SerializeField] private string _platformDataPath;
 
         private static Data _instance;
-        // private static SphereData _sphereData;  example
         private static CharacterData _characterData;
+        private static PlatformData _platformData;
 
         #endregion
 
@@ -31,19 +31,7 @@ namespace LastStandingSheep
                 return _instance;
             }
         }
-        // example:
-        //public static SphereData SphereData
-        //{
-        //    get
-        //    {
-        //        if (_sphereData == null)
-        //        {
-        //            _sphereData = Load<SphereData>("Data/" + Instance._sphereDataPath);
-        //        }
-        //        return _sphereData;
-        //    }
-        //}
-        //}
+
         public static CharacterData CharacterData
         {
             get
@@ -56,11 +44,23 @@ namespace LastStandingSheep
             }
         }
 
+        public static PlatformData PlatformData
+        {
+            get
+            {
+                if (_platformData == null)
+                {
+                    _platformData = Load<PlatformData>("Data/" + Instance._platformDataPath);
+                }
+                return _platformData;
+            }
+        }
 
-            #endregion
+
+        #endregion
 
 
-            #region Methods
+        #region Methods
 
         private static T Load<T>(string resourcesPath) where T : Object =>
             Resources.Load<T>(Path.ChangeExtension(resourcesPath, null));

@@ -11,6 +11,7 @@ namespace LastStandingSheep
         //public SphereModel _sphereModel;  Example
         public CharacterModel CharacterModel;
         public InputModel InputModel;
+        public PlatformModel PlatformModel;
 
         #endregion
 
