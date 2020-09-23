@@ -3,7 +3,7 @@
 namespace LastStandingSheep
 {
     [CreateAssetMenu(fileName = "NewData", menuName = "CreateData/PlatformData", order = 0)]
-    public class PlatformData : ScriptableObject
+    public sealed class PlatformData : ScriptableObject
     {
         [SerializeField]
         public PlatformStruct PlatformStruct;

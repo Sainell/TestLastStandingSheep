@@ -10,10 +10,12 @@ namespace LastStandingSheep
 
         [SerializeField] private string _characterDataPath;
         [SerializeField] private string _platformDataPath;
+        [SerializeField] private string _sheepBotDataPath;
 
         private static Data _instance;
         private static CharacterData _characterData;
         private static PlatformData _platformData;
+        private static SheepBotData _sheepBotData;
 
         #endregion
 
@@ -53,6 +55,18 @@ namespace LastStandingSheep
                     _platformData = Load<PlatformData>("Data/" + Instance._platformDataPath);
                 }
                 return _platformData;
+            }
+        }
+
+        public static SheepBotData SheepBotData
+        {
+            get
+            {
+                if (_sheepBotData == null)
+                {
+                    _sheepBotData = Load<SheepBotData>("Data/" + Instance._sheepBotDataPath);
+                }
+                return _sheepBotData;
             }
         }
 

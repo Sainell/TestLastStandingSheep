@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CharacterData
   m_EditorClassIdentifier: 
   MoveSpeed: 5
-  JumpForce: 40
+  JumpForce: 50
   RotationSpeed: 0.1
   CharacterStruct:
     Prefab: {fileID: 557184213636089347, guid: 71c46b362047b534d91fca04ff255948, type: 3}

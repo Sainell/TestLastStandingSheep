@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f2a44526011ca14589ed478ad025d3c, type: 3}
-  m_Name: Data
+  m_Script: {fileID: 11500000, guid: 52e59a075bbe315418d48e41f753f8ac, type: 3}
+  m_Name: SheepBotData
   m_EditorClassIdentifier: 
-  _characterDataPath: CharacterData
-  _platformDataPath: PlatformData
-  _sheepBotDataPath: SheepBotData
+  SheepBotStruct:
+    Prefab: {fileID: 557184213636089347, guid: be66e172f59c7ce4390360f3a4d9d1fd, type: 3}
+  SheepCount: 5
+  SpawnPoint: {x: 57, y: 23, z: 49}

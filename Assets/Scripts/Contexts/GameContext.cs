@@ -8,10 +8,10 @@ namespace LastStandingSheep
     {
         #region Fields
 
-        //public SphereModel _sphereModel;  Example
         public CharacterModel CharacterModel;
         public InputModel InputModel;
         public PlatformModel PlatformModel;
+        public List<SheepBotModel> SheepBotModelList = new List<SheepBotModel>();
 
         #endregion
 

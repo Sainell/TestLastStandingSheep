@@ -8,6 +8,7 @@
         {
             //add controllers
             Add(new PlatformController(context));
+            Add(new SheepBotController(context));
         }
 
         #endregion
