@@ -2,10 +2,11 @@
 
 public class Move : MonoBehaviour
 {
-    private const float CAMERA_LOW_SIDE_ANGLE = 0f;
-    private const float CAMERA_HALF_SIDE_ANGLE = 90f;
-    private const float CAMERA_BACK_SIDE_ANGLE = 225f;
-    private const float CAMERA_BACK_ANGLE = 180f;
+    private const float CAMERA_ANGLE_0 = 0f;
+    private const float CAMERA_ANGLE_45 = 45f;
+    private const float CAMERA_ANGLE_90 = 90f;
+    private const float CAMERA_ANGLE_135 = 135f;
+    private const float CAMERA_ANGLE_180 = 180f;
 
     public float MoveSpeed;
     public float JumpForce;
@@ -22,7 +23,7 @@ public class Move : MonoBehaviour
     public float v;
     private float addDir;
     private float CurrentAngleVel;
-    // Start is called before the first frame update
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -30,7 +31,6 @@ public class Move : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         h = Input.GetAxis("Horizontal");
@@ -40,15 +40,10 @@ public class Move : MonoBehaviour
         InputCheck(Moves());
         Jump();
     }
-    private void Animator()
-    {
-        _animator.Play("Sheep|Walk");
-    }
     private void InputCheck(float moveAxis)
     {
         Movement(moveAxis);
-     //   Turn(moveAxis);
-        AngleByCamera(moveAxis);
+        TurnAngleByCamera();
     }
     private float Moves()
     {
@@ -64,78 +59,71 @@ public class Move : MonoBehaviour
             return 0f;
         }
     }
+
     private void Movement(float input)
     {
         _rigidbody.AddForce(transform.forward  * input * MoveSpeed, ForceMode.Impulse);
     }
 
-    //private void Turn(float input)
-    //{
-    //     transform.Rotate(Vector3.up, Angle360(transform.forward, moveVector, transform.right)*RotationSpeed * Time.deltaTime);
-    //}
-
-    private void AngleByCamera(float input)
+    private void TurnAngleByCamera()
     {
-
-
         if (v > 0)
         {
             if (h == 0)
             {
-                addDir = 0f;
+                addDir = CAMERA_ANGLE_0;
             }
             if (h < 0)
             {
-                addDir = -45f;
+                addDir = -CAMERA_ANGLE_45;
             }
             if (h > 0)
             {
-                addDir = 45f;
+                addDir = CAMERA_ANGLE_45;
             }
         }
         if (v < 0)
         {
             if (h == 0)
             {
-                addDir = 180f;
+                addDir = CAMERA_ANGLE_180;
             }
             if (h < 0)
             {
-                addDir = -135f;
+                addDir = -CAMERA_ANGLE_135;
             }
             if (h > 0)
             {
-                addDir = 135f;
+                addDir = CAMERA_ANGLE_135;
             }
         }
         if (v == 0)
         {
             if (h < 0)
             {
-                addDir = -90f;
+                addDir = -CAMERA_ANGLE_90;
             }
             if (h > 0)
             {
-                addDir = 90f;
+                addDir = CAMERA_ANGLE_90;
             }
         }
 
         var CurrentDirecton = transform.localEulerAngles.y;
         var TargetDirection = MainCamera.transform.localEulerAngles.y + addDir;
-        var CurrentAngle = Mathf.SmoothDampAngle(CurrentDirecton, TargetDirection, ref CurrentAngleVel, 0.1f);
+        var CurrentAngle = Mathf.SmoothDampAngle(CurrentDirecton, TargetDirection, ref CurrentAngleVel, 0f);
         if (isMove)
         {
             transform.localRotation = Quaternion.Euler(0, CurrentAngle, 0);
         }
     }
-    //private float Angle360(Vector3 from, Vector3 to, Vector3 right)
-    //{
-    //    float angle = Vector3.Angle(from, to);
-    //    return (Vector3.Angle(right, to) > 90f) ? 360f - angle : angle;
-    //}
 
     private void Jump()
     {
+        //PlayerPrefs.SetInt("rec", 1);
+
+        //PlayerPrefs.GetInt("rec");
+
         if (Input.GetAxis("Jump")>0)
         {
             if(_isGrounded)
