@@ -28,7 +28,7 @@ namespace LastStandingSheep
         public void OnAwake()
         {
             var PlatformData = Data.PlatformData;
-            GameObject instance = GameObject.Instantiate(PlatformData.PlatformStruct.Prefab, PlatformData.PlatformStruct.SpawnPoint, Quaternion.identity);
+            GameObject instance = GameObject.Find("Platform"); //GameObject.Instantiate(PlatformData.PlatformStruct.Prefab, PlatformData.PlatformStruct.SpawnPoint, Quaternion.identity);
             PlatformModel platform = new PlatformModel(instance, PlatformData);
             _context.PlatformModel = platform;
         }

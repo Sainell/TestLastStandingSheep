@@ -17,16 +17,15 @@ MonoBehaviour:
       type: 3}
     SpawnPoint: {x: 40, y: 22, z: 50}
     SpawnPoints:
-    - {x: 56, y: 22, z: 63}
-    - {x: 48, y: 22, z: 60}
-    - {x: 41, y: 22, z: 61}
-    - {x: 34, y: 22, z: 56}
-    - {x: 37, y: 22, z: 43}
-    - {x: 57, y: 22, z: 41}
-    - {x: 20, y: 24, z: 51}
-    - {x: 65, y: 22, z: 58}
-  RespawnTime: 3
-  DelayBeforMove: 5
+    - {x: 56, y: 20.94, z: 62}
+    - {x: 48.2, y: 21.068, z: 62.13}
+    - {x: 41, y: 20.91, z: 59.9}
+    - {x: 38.13, y: 20.918, z: 63.75}
+    - {x: 35.903, y: 20.893, z: 40.958}
+    - {x: 57.89, y: 20.845, z: 40.438}
+    - {x: 18.69, y: 23.54, z: 52.33}
+    - {x: 64.49, y: 20.66, z: 59.01}
+  RespawnTime: 5
+  StartMoveTime: 5
   MoveTime: 7
-  DelayBeforOff: 10
-  MoveSpeed: 10
+  HideTime: 10

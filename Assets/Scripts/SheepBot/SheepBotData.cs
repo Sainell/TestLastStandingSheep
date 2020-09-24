@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.AI;
 
 namespace LastStandingSheep
 {
@@ -11,11 +11,10 @@ namespace LastStandingSheep
         public SheepBotModel SheepBotModel;
 
         public int SheepCount;
-        public Vector3 SpawnPoint;
+        public Vector3[] SpawnPoints;
 
         public void Updating()
         {
-
         }
     }
 }

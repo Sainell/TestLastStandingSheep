@@ -14,5 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SheepBotStruct:
     Prefab: {fileID: 557184213636089347, guid: be66e172f59c7ce4390360f3a4d9d1fd, type: 3}
-  SheepCount: 5
-  SpawnPoint: {x: 57, y: 23, z: 49}
+  SheepBotModel: {fileID: 0}
+  SheepCount: 16
+  SpawnPoints:
+  - {x: 58, y: 22, z: 49}
+  - {x: 58, y: 22, z: 51}
+  - {x: 58, y: 22, z: 53}
+  - {x: 58, y: 22, z: 55}
+  - {x: 56, y: 22, z: 49}
+  - {x: 56, y: 22, z: 51}
+  - {x: 56, y: 22, z: 53}
+  - {x: 56, y: 22, z: 55}
+  - {x: 54, y: 22, z: 49}
+  - {x: 54, y: 22, z: 51}
+  - {x: 54, y: 22, z: 53}
+  - {x: 54, y: 22, z: 55}
+  - {x: 52, y: 22, z: 49}
+  - {x: 52, y: 22, z: 51}
+  - {x: 52, y: 22, z: 53}
+  - {x: 52, y: 22, z: 55}

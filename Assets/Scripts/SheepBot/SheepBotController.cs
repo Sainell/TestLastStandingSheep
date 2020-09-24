@@ -38,7 +38,7 @@ namespace LastStandingSheep
             var SheepBotData = Data.SheepBotData;
             for (int i = 0; i < SheepBotData.SheepCount; i++)
             {
-                GameObject instance = GameObject.Instantiate(SheepBotData.SheepBotStruct.Prefab, SheepBotData.SpawnPoint, Quaternion.identity);
+                GameObject instance = GameObject.Instantiate(SheepBotData.SheepBotStruct.Prefab, SheepBotData.SpawnPoints[i], Quaternion.identity);
                 SheepBotModel sheepBot = new SheepBotModel(instance, SheepBotData);
                 _context.SheepBotModelList.Add(sheepBot);
             }
