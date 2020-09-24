@@ -41,15 +41,28 @@ namespace LastStandingSheep
 
         public void MeshAgentSwitch(bool isActive)
         {
-            NavMeshAgent.enabled = !isActive;
+            if (NavMeshAgent != null)
+            {
+                NavMeshAgent.enabled = !isActive;
+            }
         }
 
         public void SetTarget()
         {
             var target = GameObject.FindGameObjectWithTag("Finish");
+            if (target == null)
+            {
+                target = GameObject.FindGameObjectWithTag("Player");
+            }
             if (target != null)
             {
-                NavMeshAgent.SetDestination(target.transform.position);
+                if (NavMeshAgent.enabled)
+                {
+                    if (NavMeshAgent != null)
+                    {
+                        NavMeshAgent.SetDestination(target.transform.position);
+                    }
+                }
             }
         }
         #endregion
