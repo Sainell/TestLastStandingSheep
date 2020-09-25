@@ -4,11 +4,10 @@ using UnityEngine.EventSystems;
 
 namespace LastStandingSheep
 {
-    public sealed class BackButton : MonoBehaviour, IPointerClickHandler
+    public sealed class BackLobbyButton : MonoBehaviour, IPointerClickHandler
     {
         private Canvas _menuPrefab;
         private Canvas _interface;
-        private GameObject _menu;
 
         public void OnPointerClick(PointerEventData eventData)
         {
@@ -19,7 +18,8 @@ namespace LastStandingSheep
         private void Awake()
         {
             _menuPrefab = gameObject.transform.parent.parent.GetComponent<Canvas>();
-            _interface = GameObject.Find("GameInterface").GetComponent<Canvas>();
+            
+            _interface = GameObject.Find("LobbyMenu").GetComponent<Canvas>();
         }
     }
 }

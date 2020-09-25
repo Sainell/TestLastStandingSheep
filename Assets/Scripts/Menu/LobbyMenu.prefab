@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8490566, g: 0.80110735, b: 0.756942, a: 0.44705883}
+  m_Color: {r: 0.8490566, g: 0.80110735, b: 0.756942, a: 0.62352943}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -418,8 +418,6 @@ GameObject:
   - component: {fileID: 7367812011238442020}
   - component: {fileID: 5304084919640322150}
   - component: {fileID: 6422859295346030423}
-  - component: {fileID: 6067272666178046036}
-  - component: {fileID: 3596221569937013122}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -529,30 +527,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &6067272666178046036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5159653609100461295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4adbd9e0974fdf418ef31183328a97d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3596221569937013122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5159653609100461295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a55fe0226775aa44682237e5d34f335c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5721735769447294509
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ namespace LastStandingSheep
 
         private void Awake()
         {
-            _menuPrefab = GameObject.Find("Settings").GetComponent<Canvas>();
+            _menuPrefab = GameObject.Find("LobbySettings").GetComponent<Canvas>();
             _interface = gameObject.transform.parent.parent.GetComponent<Canvas>();
         }
     }
