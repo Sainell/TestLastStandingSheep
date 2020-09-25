@@ -49,18 +49,21 @@ namespace LastStandingSheep
 
         public void SetTarget()
         {
-            var target = GameObject.FindGameObjectWithTag("Finish");
-            if (target == null)
+            if (NavMeshAgent != null)
             {
-                target = GameObject.FindGameObjectWithTag("Player");
-            }
-            if (target != null)
-            {
-                if (NavMeshAgent.enabled)
+                var target = GameObject.FindGameObjectWithTag("Finish");
+                if (target == null)
                 {
-                    if (NavMeshAgent != null)
+                    target = GameObject.FindGameObjectWithTag("Player");
+                }
+                if (target != null)
+                {
+                    if (NavMeshAgent.enabled)
                     {
-                        NavMeshAgent.SetDestination(target.transform.position);
+                        if (NavMeshAgent != null)
+                        {
+                            NavMeshAgent.SetDestination(target.transform.position);
+                        }
                     }
                 }
             }

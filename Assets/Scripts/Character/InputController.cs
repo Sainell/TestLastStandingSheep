@@ -20,6 +20,7 @@ namespace LastStandingSheep
         public InputModel _inputModel { get; private set; }
         public CharacterModel _characterModel { get; private set; }
 
+
         #endregion
 
 
@@ -47,18 +48,22 @@ namespace LastStandingSheep
             _inputModel.InputJump = 0;
             _inputModel.IsInputJump = false;
             _inputModel.IsInputMove = false;
+            CharacterData.PlayerDie += _inputModel.OnDie;
 
         }
 
         public void Updating()
         {
-            _inputModel.InputHorizontal = Input.GetAxis("Horizontal");
-            _inputModel.InputVertical = Input.GetAxis("Vertical");
-            _inputModel.InputJump = Input.GetAxis("Jump");
-            _inputModel.InputTotalHorizontal = GetTotalValue(_inputModel.InputHorizontal);
-            _inputModel.InputTotalVertical = GetTotalValue(_inputModel.InputVertical);
-            _inputModel.IsInputMove = (_inputModel.InputHorizontal != 0 || _inputModel.InputVertical != 0) ? true : false;
-            _inputModel.IsInputJump = !_characterModel.CharacterData.IsGrounded;
+            if (!_context.InputModel.IsDie)
+            {
+                _inputModel.InputHorizontal = Input.GetAxis("Horizontal");
+                _inputModel.InputVertical = Input.GetAxis("Vertical");
+                _inputModel.InputJump = Input.GetAxis("Jump");
+                _inputModel.InputTotalHorizontal = GetTotalValue(_inputModel.InputHorizontal);
+                _inputModel.InputTotalVertical = GetTotalValue(_inputModel.InputVertical);
+                _inputModel.IsInputMove = (_inputModel.InputHorizontal != 0 || _inputModel.InputVertical != 0) ? true : false;
+                _inputModel.IsInputJump = !_characterModel.CharacterData.IsGrounded;
+            }
         }
 
         private float GetTotalValue(float value)

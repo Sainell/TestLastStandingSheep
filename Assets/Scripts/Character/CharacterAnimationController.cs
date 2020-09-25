@@ -43,22 +43,26 @@ namespace LastStandingSheep
 
         public void PlayIdleAnimation()
         {
-            CharacterAnimator.Play(_idle);
+            if (CharacterAnimator != null)
+                CharacterAnimator.Play(_idle);
         }
 
         public void PlayWalkAnimation()
         {
-            CharacterAnimator.Play(_walk);
+            if (CharacterAnimator != null)
+                CharacterAnimator.Play(_walk);
         }
 
         public void PlayJumpAnimation()
         {
-            CharacterAnimator.Play(_jump);
+            if (CharacterAnimator != null)
+                CharacterAnimator.Play(_jump);
         }
 
         public void PlayDieAnimation()
         {
-            CharacterAnimator.Play(_die);
+            if (CharacterAnimator != null)
+                CharacterAnimator.Play(_die);
         }
     }
 }

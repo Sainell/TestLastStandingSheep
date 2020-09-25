@@ -16,7 +16,7 @@ namespace LastStandingSheep
 
         #region Properties
 
-
+        public bool isPlayerDie { get; private set; }
 
         #endregion
 
@@ -42,14 +42,23 @@ namespace LastStandingSheep
                 SheepBotModel sheepBot = new SheepBotModel(instance, SheepBotData);
                 _context.SheepBotModelList.Add(sheepBot);
             }
+            CharacterData.PlayerDie += OnCheckPlayer;
         }
 
         public void Updating()
         {
-           foreach (var sheepBot in _context.SheepBotModelList)
+            if (!isPlayerDie)
             {
-                sheepBot.Execute();
+                foreach (var sheepBot in _context.SheepBotModelList)
+                {
+                    sheepBot.Execute();
+                }
             }
+        }
+
+        private void OnCheckPlayer()
+        {
+            isPlayerDie = true;
         }
 
         #endregion

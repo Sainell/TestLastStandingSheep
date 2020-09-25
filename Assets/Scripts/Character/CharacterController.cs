@@ -49,7 +49,7 @@ namespace LastStandingSheep
             InputModel.OnIdle += _animationController.PlayIdleAnimation;
             InputModel.OnWalk += _animationController.PlayWalkAnimation;
             InputModel.OnJump += _animationController.PlayDieAnimation;
-            InputModel.OnDie += _animationController.PlayDieAnimation;
+            CharacterData.PlayerDie += _animationController.PlayDieAnimation;
 
         }
 

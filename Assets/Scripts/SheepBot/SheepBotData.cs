@@ -15,6 +15,7 @@ namespace LastStandingSheep
 
         public void Updating()
         {
+
         }
     }
 }

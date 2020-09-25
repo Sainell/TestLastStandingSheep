@@ -30,6 +30,8 @@ namespace LastStandingSheep
             MainCamera = mainCamera;
             VirtualCamera = virtualCamera;
             Animator = prefab.GetComponent<Animator>();
+
+            GameEventController.WinEvent += CharacterData.OnPlayerWin;
         }
 
         #endregion

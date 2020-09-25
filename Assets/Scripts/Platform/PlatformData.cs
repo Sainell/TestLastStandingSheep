@@ -103,7 +103,11 @@ namespace LastStandingSheep
         {
             PlatformModel.Platform.transform.GetChild(0).gameObject.SetActive(false);
             PlatformIsMove?.Invoke(true);
-            PlatformModel.Platform.transform.DOMoveY(25, MoveTime);
+            PlatformModel.Platform.transform.DOMoveY(30, MoveTime);
+          //  PlatformModel.Ocean.transform.DOMoveY(25, MoveTime);
+
+            Sequence sequence = DOTween.Sequence();
+            sequence.Append(PlatformModel.Ocean.transform.DOMoveY(25, MoveTime)).AppendInterval(2f).Append(PlatformModel.Ocean.transform.DOMoveY(15, MoveTime));
         }
 
 

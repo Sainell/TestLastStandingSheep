@@ -1,9 +1,9 @@
 ﻿using System;
-using UnityEngine;
+
 
 namespace LastStandingSheep
 {
-    public class InputModel
+    public sealed class InputModel
     {
         #region Fields
 
@@ -18,14 +18,21 @@ namespace LastStandingSheep
 
         #endregion
 
+        #region Properties
+
+        public bool IsDie { get; private set; }
+
+        #endregion
 
         #region Events
 
         public static Action OnJump;
         public static Action OnWalk;
-        public static Action OnDie;
         public static Action OnIdle;
 
+        #endregion
+
+        #region Methods
 
         public bool IsInputMove
         {
@@ -41,12 +48,17 @@ namespace LastStandingSheep
 
                     if (_isInputMove)
                     {
-                        // event move start
-                        OnWalk?.Invoke();
+                        if (!IsDie)
+                        {
+                            OnWalk?.Invoke();
+                        }
                     }
                     else
                     {
-                        OnIdle?.Invoke();
+                        if (!IsDie)
+                        {
+                            OnIdle?.Invoke();
+                        }
                     }
                 }
             }
@@ -66,16 +78,26 @@ namespace LastStandingSheep
 
                     if (_isInputJump)
                     {
-                        //event start jump
-                        OnJump?.Invoke();
+                        if (!IsDie)
+                        {
+                            OnJump?.Invoke();
+                        }
                     }
                     else
                     {
-                        //event stop jump
-                        OnIdle?.Invoke();
+                        if (!IsDie)
+                        {
+                            OnIdle?.Invoke();
+                        }
                     }
                 }
             }
+        }
+
+
+        public void OnDie()
+        {
+            IsDie = true;
         }
 
         #endregion

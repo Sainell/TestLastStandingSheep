@@ -13,6 +13,13 @@ namespace LastStandingSheep
         #endregion
 
 
+        #region Properties
+
+        public bool isPlayerDie { get; private set; }
+
+        #endregion
+
+
         #region ClassLifeCycle
 
         public PlatformController(GameContext context)
@@ -29,14 +36,24 @@ namespace LastStandingSheep
         {
             var PlatformData = Data.PlatformData;
             // GameObject instance = GameObject.Find("Platform");
+            GameObject ocean = GameObject.Find("Ocean");
             GameObject instance = GameObject.Instantiate(PlatformData.PlatformStruct.Prefab, PlatformData.PlatformStruct.SpawnPoint, Quaternion.identity);
-            PlatformModel platform = new PlatformModel(instance, PlatformData);
+            PlatformModel platform = new PlatformModel(instance, PlatformData, ocean);
             _context.PlatformModel = platform;
+            CharacterData.PlayerDie += OnCheckPlayer;
         }
 
         public void Updating()
         {
-            _context.PlatformModel.Execute();
+            if (!isPlayerDie)
+            {
+                _context.PlatformModel.Execute();
+            }
+        }
+
+        private void OnCheckPlayer()
+        {
+            isPlayerDie = true;
         }
 
         #endregion

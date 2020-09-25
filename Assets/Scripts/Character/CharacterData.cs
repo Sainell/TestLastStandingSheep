@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace LastStandingSheep
 {
@@ -6,6 +7,8 @@ namespace LastStandingSheep
     public sealed class CharacterData : ScriptableObject
     {
         #region Fields
+
+        public static Action PlayerDie;
 
         private const float CAMERA_ANGLE_0 = 0f;
         private const float CAMERA_ANGLE_45 = 45f;
@@ -159,6 +162,21 @@ namespace LastStandingSheep
                 hitPoint = hit.point;
             }
             return isHit;
+        }
+
+        public void OnTriggerEnter(Collider other)
+        {
+            PlayerDie?.Invoke();
+           // CharacterModel.Animator.Play("Sheep|Die");
+        }
+
+        public void OnTriggerExit(Collider other)
+        {
+        }
+
+        public void OnPlayerWin()
+        {
+            Debug.Log("win");
         }
 
         #endregion
