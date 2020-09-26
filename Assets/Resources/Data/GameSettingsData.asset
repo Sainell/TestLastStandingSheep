@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74f72d6a639a4945b2c5ddc9109258d, type: 3}
   m_Name: GameSettingsData
   m_EditorClassIdentifier: 
-  Win: 3
-  Lost: 5
+  Win: 0
+  Lost: 0
   isSound: 1
-  isMusic: 0
+  isMusic: 1
   isVibro: 1

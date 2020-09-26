@@ -3,11 +3,12 @@ using UnityEngine;
 
 namespace LastStandingSheep
 {
-    public class GameEventController : IUpdate
+    public class GameEventController : IUpdate, IAwake
     {
         public static Action WinEvent;
 
         public bool isWin;
+        public bool isLost;
 
         public void Updating()
         {
@@ -16,15 +17,28 @@ namespace LastStandingSheep
 
         private void SheepCounter()
         {
-            if (!isWin)
+            if (!isLost)
             {
-                var count = GameObject.FindGameObjectsWithTag("Sheep");
-                if (count.Length == 0)
+                if (!isWin)
                 {
-                    isWin = true;
-                    WinEvent?.Invoke();
+                    var count = GameObject.FindGameObjectsWithTag("Sheep");
+                    if (count.Length == 0)
+                    {
+                        isWin = true;
+                        WinEvent?.Invoke();
+                    }
                 }
             }
+        }
+
+        private void OnLost()
+        {
+            isLost = true;
+        }
+
+        public void OnAwake()
+        {
+            CharacterData.PlayerDie += OnLost;
         }
     }
 }

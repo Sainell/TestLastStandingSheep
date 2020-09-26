@@ -33,6 +33,8 @@ namespace LastStandingSheep
         private float _addDirection;
         private float _currentAngleValue;
         private Vector3 _groundHit;
+        private bool _isWin;
+        private bool _isDie;
 
         #endregion
 
@@ -166,9 +168,17 @@ namespace LastStandingSheep
 
         public void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player"))
+            if (!_isWin)
             {
-                PlayerDie?.Invoke();
+                if (!_isDie)
+                {
+                    if (other.CompareTag("Player"))
+                    {
+                        _isDie = true;
+                        PlayerDie?.Invoke();
+                        Debug.Log("lost");
+                    }
+                }
             }
         }
 
@@ -178,6 +188,7 @@ namespace LastStandingSheep
 
         public void OnPlayerWin()
         {
+            _isWin = true;
             Debug.Log("win");
         }
 

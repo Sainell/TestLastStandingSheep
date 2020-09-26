@@ -1207,6 +1207,7 @@ GameObject:
   - component: {fileID: 1641541667162378963}
   - component: {fileID: 252437888384997337}
   - component: {fileID: 6260286112638606542}
+  - component: {fileID: -3950151896175790673}
   m_Layer: 5
   m_Name: LobbySettings
   m_TagString: Untagged
@@ -1294,6 +1295,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &-3950151896175790673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914161619116300447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6d93f1febfa84343aec28ac9c90a2d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9031943670109576854
 GameObject:
   m_ObjectHideFlags: 0

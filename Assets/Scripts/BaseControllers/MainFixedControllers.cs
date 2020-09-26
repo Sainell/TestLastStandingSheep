@@ -8,6 +8,7 @@
         {
             Add(new CharacterController(context));
             Add(new InputController(context));
+            Add(new SheepBotController(context));
         }
 
         #endregion

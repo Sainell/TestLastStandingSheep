@@ -9,7 +9,7 @@
             //add controllers
            
             Add(new PlatformController(context));
-            Add(new SheepBotController(context));
+            
             Add(new InitializeInteractableObjectController(context));
             Add(new PlayerTriggerController(context));
             Add(new SheepTriggerController(context));

@@ -16,7 +16,6 @@ namespace LastStandingSheep
         private void Start()
         {
             GameContext context = new GameContext();
-            //serives
             _activeController = new GameSystemsController(context);
             _activeController.Initialize();
             
