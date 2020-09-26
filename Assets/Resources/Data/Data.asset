@@ -15,3 +15,4 @@ MonoBehaviour:
   _characterDataPath: CharacterData
   _platformDataPath: PlatformData
   _sheepBotDataPath: SheepBotData
+  _gameSettingsDataPath: GameSettingsData

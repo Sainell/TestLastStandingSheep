@@ -166,8 +166,10 @@ namespace LastStandingSheep
 
         public void OnTriggerEnter(Collider other)
         {
-            PlayerDie?.Invoke();
-           // CharacterModel.Animator.Play("Sheep|Die");
+            if (other.CompareTag("Player"))
+            {
+                PlayerDie?.Invoke();
+            }
         }
 
         public void OnTriggerExit(Collider other)

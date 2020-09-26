@@ -6,7 +6,7 @@ using UnityEngine;
 namespace LastStandingSheep
 {
     [CreateAssetMenu(fileName = "NewData", menuName = "CreateData/SettingsData", order = 0)]
-    public sealed class GameSettingsSO : ScriptableObject
+    public sealed class GameSettingsData : ScriptableObject
     {
         public int Win;
         public int Lost;
