@@ -17,8 +17,9 @@ namespace LastStandingSheep
 
         #region Properties
 
-        public InputModel _inputModel { get; private set; }
-        public CharacterModel _characterModel { get; private set; }
+        public InputModel InputModel { get; private set; }
+        public CharacterModel CharacterModel { get; private set; }
+        public FixedJoystick Joystick { get; private set; }
 
 
         #endregion
@@ -29,8 +30,8 @@ namespace LastStandingSheep
         public InputController(GameContext context)
         {
             _context = context;
-            _inputModel = new InputModel();
-            _context.InputModel = _inputModel;
+            InputModel = new InputModel();
+            _context.InputModel = InputModel;
         }
 
         #endregion
@@ -40,15 +41,16 @@ namespace LastStandingSheep
 
         public void OnAwake()
         {
-            _characterModel = _context.CharacterModel;
-            _inputModel.InputHorizontal = 0;
-            _inputModel.InputVertical = 0;
-            _inputModel.InputTotalHorizontal = 0;
-            _inputModel.InputTotalVertical = 0;
-            _inputModel.InputJump = 0;
-            _inputModel.IsInputJump = false;
-            _inputModel.IsInputMove = false;
-            CharacterData.PlayerDie += _inputModel.OnDie;
+            CharacterModel = _context.CharacterModel;
+            InputModel.InputHorizontal = 0;
+            InputModel.InputVertical = 0;
+            InputModel.InputTotalHorizontal = 0;
+            InputModel.InputTotalVertical = 0;
+            InputModel.InputJump = 0;
+            InputModel.IsInputJump = false;
+            InputModel.IsInputMove = false;
+            Joystick = GameObject.FindObjectOfType<FixedJoystick>();
+            CharacterData.PlayerDie += InputModel.OnDie;
 
         }
 
@@ -56,23 +58,40 @@ namespace LastStandingSheep
         {
             if (!_context.InputModel.IsDie)
             {
-                _inputModel.InputHorizontal = Input.GetAxis("Horizontal");
-                _inputModel.InputVertical = Input.GetAxis("Vertical");
-                _inputModel.InputJump = Input.GetAxis("Jump");
-                _inputModel.InputTotalHorizontal = GetTotalValue(_inputModel.InputHorizontal);
-                _inputModel.InputTotalVertical = GetTotalValue(_inputModel.InputVertical);
-                _inputModel.IsInputMove = (_inputModel.InputHorizontal != 0 || _inputModel.InputVertical != 0) ? true : false;
-                _inputModel.IsInputJump = !_characterModel.CharacterData.IsGrounded;
+
+                //InputModel.InputHorizontal = Input.GetAxis("Horizontal");
+                //InputModel.InputVertical = Input.GetAxis("Vertical");
+                //InputModel.InputJump = Input.GetAxis("Jump");
+
+
+                InputModel.InputHorizontal = Joystick.Horizontal;
+                InputModel.InputVertical = Joystick.Vertical;
+#if UNITY_EDITOR
+#endif
+#if UNITY_ANDROID
+                
+
+
+#endif
+                InputModel.InputTotalHorizontal = GetTotalValue(InputModel.InputHorizontal);
+                InputModel.InputTotalVertical = GetTotalValue(InputModel.InputVertical);
+                InputModel.IsInputMove = (InputModel.InputHorizontal != 0 || InputModel.InputVertical != 0) ? true : false;
+                InputModel.IsInputJump = !CharacterModel.CharacterData.IsGrounded;
             }
         }
 
         private float GetTotalValue(float value)
         {
-            var totalValue = value > 0 ? 1 : value < 0 ? -1 : 0;
+            var totalValue = value > 0.5f ? 1 : value < 0.5f ? -1 : 0;
+
+            if(value>0.5f)
+            {
+                
+            }
             return totalValue;
         }
 
-        #endregion
+#endregion
     }
 
 }

@@ -10,11 +10,7 @@ namespace LastStandingSheep
 
         public static Action PlayerDie;
 
-        private const float CAMERA_ANGLE_0 = 0f;
-        private const float CAMERA_ANGLE_45 = 45f;
-        private const float CAMERA_ANGLE_90 = 90f;
-        private const float CAMERA_ANGLE_135 = 135f;
-        private const float CAMERA_ANGLE_180 = 180f;
+        private const float CAMERA_ANGLE = 90f;
         private const float GROUND_CHECK_DISTANCE = 0.2f;
 
         public float MoveSpeed;
@@ -51,42 +47,35 @@ namespace LastStandingSheep
 
         public void Updating()
         {
-            _totalHorizontal = InputModel.InputTotalHorizontal;
-            _totalVertical = InputModel.InputTotalVertical;
+            _totalHorizontal = InputModel.InputHorizontal;
+            _totalVertical = InputModel.InputVertical;
             _jump = InputModel.InputJump;
-            InputCheck(Moves());
+            IsMove = InputModel.IsInputMove;
+            InputCheck(CheckMoves());
             Jump();
             IsGrounded = CheckGround(CharacterModel.Character.transform.position, GROUND_CHECK_DISTANCE, out _groundHit);
         }
 
-        private float GetTotalValue(float value)
-        {
-            var totalValue = value > 0 ? 1 : value < 0 ? -1 : 0;
-            return totalValue;
-        }
         private void InputCheck(float moveAxis)
         {
             Movement(moveAxis);
             TurnAngleByCamera();
         }
-        private float Moves()
+        private float CheckMoves()
         {
             if (_totalHorizontal != 0 || _totalVertical != 0)
             {
-                IsMove = true;
                 return 1f;
             }
 
             else
             {
-                IsMove = false;
                 return 0f;
             }
         }
 
         private void Movement(float input)
-        {
-            
+        {     
            CharacterModel.Rigidbody.AddForce(CharacterModel.Character.transform.forward * input * MoveSpeed, ForceMode.Impulse);
         }
 
@@ -94,44 +83,11 @@ namespace LastStandingSheep
         {
             if (_totalVertical > 0)
             {
-                if (_totalHorizontal == 0)
-                {
-                    _addDirection = CAMERA_ANGLE_0;
-                }
-                if (_totalHorizontal < 0)
-                {
-                    _addDirection = -CAMERA_ANGLE_45;
-                }
-                if (_totalHorizontal > 0)
-                {
-                    _addDirection = CAMERA_ANGLE_45;
-                }
+                _addDirection = _totalHorizontal * CAMERA_ANGLE;
             }
             if (_totalVertical < 0)
             {
-                if (_totalHorizontal == 0)
-                {
-                    _addDirection = CAMERA_ANGLE_180;
-                }
-                if (_totalHorizontal < 0)
-                {
-                    _addDirection = -CAMERA_ANGLE_135;
-                }
-                if (_totalHorizontal > 0)
-                {
-                    _addDirection = CAMERA_ANGLE_135;
-                }
-            }
-            if (_totalVertical == 0)
-            {
-                if (_totalHorizontal < 0)
-                {
-                    _addDirection = -CAMERA_ANGLE_90;
-                }
-                if (_totalHorizontal > 0)
-                {
-                    _addDirection = CAMERA_ANGLE_90;
-                }
+                _addDirection = _totalHorizontal * -CAMERA_ANGLE - (CAMERA_ANGLE * 2);
             }
 
             var CurrentDirecton = CharacterModel.Character.transform.localEulerAngles.y;
