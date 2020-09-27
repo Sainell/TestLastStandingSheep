@@ -15,11 +15,6 @@ namespace LastStandingSheep
 
         #endregion
 
-        private void OnLevelWasLoaded(int level)
-        {
-            Start();
-        }
-
         private void Start()
         {
             _isMusic = GameObject.Find("LobbySettings").transform.Find("Image/Music/MusicToggle").GetComponent<Toggle>();

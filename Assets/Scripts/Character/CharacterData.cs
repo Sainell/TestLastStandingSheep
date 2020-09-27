@@ -154,6 +154,11 @@ namespace LastStandingSheep
             }
         }
 
+        public void ResetDieState()
+        {
+            _isDie = false;
+            _isWin = false;
+        }
 
         public bool CheckGround(Vector3 position, float distanceRay, out Vector3 hitPoint)
         {
@@ -176,7 +181,6 @@ namespace LastStandingSheep
                     {
                         _isDie = true;
                         PlayerDie?.Invoke();
-                        Debug.Log("lost");
                     }
                 }
             }
@@ -189,7 +193,6 @@ namespace LastStandingSheep
         public void OnPlayerWin()
         {
             _isWin = true;
-            Debug.Log("win");
         }
 
         #endregion

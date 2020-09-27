@@ -30,7 +30,7 @@ namespace LastStandingSheep
             MainCamera = mainCamera;
             VirtualCamera = virtualCamera;
             Animator = prefab.GetComponent<Animator>();
-
+            CharacterData.ResetDieState();
             GameEventController.WinEvent += CharacterData.OnPlayerWin;
         }
 
