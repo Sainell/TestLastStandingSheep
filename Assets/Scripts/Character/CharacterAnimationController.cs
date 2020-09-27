@@ -1,24 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 namespace LastStandingSheep
 {
     public sealed class CharacterAnimationController
     {
         #region Fields
-
+        public Animator CharacterAnimator;
         private int _idle;
         private int _walk;
         private int _jump;
         private int _die;
-
-        #endregion
-
-
-        #region Properties
-
-        private Animator CharacterAnimator { get; set; }
 
         #endregion
 
@@ -33,11 +25,13 @@ namespace LastStandingSheep
 
         #endregion
 
+
+        #region Methods
+
         public void Initialize()
         {
             _idle = Animator.StringToHash("SheepIdle");
             _walk = Animator.StringToHash("Sheep|Walk");
-            _jump = Animator.StringToHash("");
             _die = Animator.StringToHash("Sheep|Die");
         }
 
@@ -64,5 +58,7 @@ namespace LastStandingSheep
             if (CharacterAnimator != null)
                 CharacterAnimator.Play(_die);
         }
+
+        #endregion
     }
 }

@@ -18,11 +18,13 @@ namespace LastStandingSheep
 
         #endregion
 
+
         #region Properties
 
         public bool IsDie { get; private set; }
 
         #endregion
+
 
         #region Events
 
@@ -31,6 +33,7 @@ namespace LastStandingSheep
         public static Action OnIdle;
 
         #endregion
+
 
         #region Methods
 
@@ -94,10 +97,14 @@ namespace LastStandingSheep
             }
         }
 
-
         public void OnDie()
         {
             IsDie = true;
+        }
+
+        public void Jump(float jump)
+        {
+            InputJump = jump;
         }
 
         #endregion

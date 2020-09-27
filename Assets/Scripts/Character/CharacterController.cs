@@ -1,10 +1,10 @@
 ﻿using Cinemachine;
 using UnityEngine;
 
+
 namespace LastStandingSheep
 {
-
-    public class CharacterController : IUpdate, IAwake
+    public sealed class CharacterController : IUpdate, IAwake
     {
         #region Fields
 
@@ -30,10 +30,13 @@ namespace LastStandingSheep
 
         #endregion
 
+
+        #region Methods
+
         public void OnAwake()
         {
-            var mainCamera = GameObject.Find("Camera");//
-            var virtualCamera = GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>(); //
+            var mainCamera = GameObject.Find("Camera");
+            var virtualCamera = GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>();
 
             var CharacterData = Data.CharacterData;
             GameObject instance = GameObject.Instantiate(CharacterData.CharacterStruct.Prefab, CharacterData.CharacterStruct.SpawnPosition, Quaternion.identity);
@@ -50,12 +53,13 @@ namespace LastStandingSheep
             InputModel.OnWalk += _animationController.PlayWalkAnimation;
             InputModel.OnJump += _animationController.PlayDieAnimation;
             CharacterData.PlayerDie += _animationController.PlayDieAnimation;
-
         }
 
         public void Updating()
         {
             _context.CharacterModel.Execute();
         }
+
+        #endregion
     }
 }

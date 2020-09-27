@@ -1,6 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
+
 namespace LastStandingSheep
 {
     public sealed class GameController : MonoBehaviour
@@ -11,6 +11,7 @@ namespace LastStandingSheep
 
         #endregion
 
+   
         #region UnityMethods
 
         private void Start()

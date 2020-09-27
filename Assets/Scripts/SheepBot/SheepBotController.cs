@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 namespace LastStandingSheep
 {
-    public class SheepBotController : IAwake, IUpdate
+    public sealed class SheepBotController : IAwake, IUpdate
     {
         #region Fields
 

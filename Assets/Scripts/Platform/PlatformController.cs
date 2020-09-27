@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 namespace LastStandingSheep
 {
-    public class PlatformController : IAwake, IUpdate
+    public sealed class PlatformController : IAwake, IUpdate
     {
         #region Fields
 
@@ -35,6 +34,7 @@ namespace LastStandingSheep
         public void OnAwake()
         {
             var PlatformData = Data.PlatformData;
+            PlatformData.ResetPlatform();
             GameObject ocean = GameObject.Find("Ocean");
             GameObject instance = GameObject.Instantiate(PlatformData.PlatformStruct.Prefab, PlatformData.PlatformStruct.SpawnPoint, Quaternion.identity);
             PlatformModel platform = new PlatformModel(instance, PlatformData, ocean);

@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 namespace LastStandingSheep
 {
@@ -11,7 +10,6 @@ namespace LastStandingSheep
         public GameObject Platform { get; private set; }
         public GameObject Ocean { get; private set; }
         public PlatformData PlatformData { get; private set; }
-        public Animator Animator { get; private set; } // need?
 
         #endregion
 
@@ -24,7 +22,6 @@ namespace LastStandingSheep
             Ocean = ocean;
             PlatformData = platformData;
             PlatformData.PlatformModel = this;
-            Animator = prefab.GetComponent<Animator>();
         }
 
         #endregion

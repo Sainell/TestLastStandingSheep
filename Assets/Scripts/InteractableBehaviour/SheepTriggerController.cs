@@ -3,7 +3,7 @@
 
 namespace LastStandingSheep
 {
-    public class SheepTriggerController : IAwake
+    public sealed class SheepTriggerController : IAwake
     {
         #region Fields
 
@@ -61,7 +61,6 @@ namespace LastStandingSheep
 
         private bool OnFilterHandler(Collider tagObject)
         {
-
             return tagObject.CompareTag("Ocean");
         }
 

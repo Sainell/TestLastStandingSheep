@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 namespace LastStandingSheep
 {
-    public class PlayerTriggerController : IAwake
+    public sealed class PlayerTriggerController : IAwake
     {
         #region Fields
 

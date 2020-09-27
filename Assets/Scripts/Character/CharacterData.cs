@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
+
 namespace LastStandingSheep
 {
     [CreateAssetMenu(fileName = "NewData", menuName = "CreateData/CharacterData", order = 0)]
@@ -99,14 +100,19 @@ namespace LastStandingSheep
             }
         }
 
-        private void Jump()
+        public void Jump()
         {
             if (_jump > 0)
             {
-                if (IsGrounded)
-                {
-                    CharacterModel.Rigidbody.AddForce(Vector3.up * JumpForce);
-                }
+                PhysicalJump();
+            }
+        }
+
+        private void PhysicalJump()
+        {
+            if (IsGrounded)
+            {
+                CharacterModel.Rigidbody.AddForce(Vector3.up * JumpForce);
             }
         }
 
@@ -116,7 +122,7 @@ namespace LastStandingSheep
             _isWin = false;
         }
 
-        public bool CheckGround(Vector3 position, float distanceRay, out Vector3 hitPoint)
+        private bool CheckGround(Vector3 position, float distanceRay, out Vector3 hitPoint)
         {
             hitPoint = Vector3.zero;
             bool isHit = Physics.Raycast(position, Vector3.down, out RaycastHit hit, distanceRay);

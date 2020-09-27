@@ -1,10 +1,11 @@
 ﻿using System.IO;
 using UnityEngine;
 
+
 namespace LastStandingSheep
 {
     [CreateAssetMenu(fileName = "Data", menuName = "Data")]
-    public class Data : ScriptableObject
+    public sealed class Data : ScriptableObject
     {
         #region Fields
 

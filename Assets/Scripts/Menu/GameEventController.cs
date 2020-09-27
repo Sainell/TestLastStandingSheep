@@ -1,14 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
+
 namespace LastStandingSheep
 {
-    public class GameEventController : IUpdate, IAwake
+    public sealed class GameEventController : IUpdate, IAwake
     {
+        #region Fields
+
         public static Action WinEvent;
 
         public bool isWin;
         public bool isLost;
+
+        #endregion
+
+
+        #region Methods
 
         public void Updating()
         {
@@ -40,5 +48,7 @@ namespace LastStandingSheep
         {
             CharacterData.PlayerDie += OnLost;
         }
+
+        #endregion
     }
 }

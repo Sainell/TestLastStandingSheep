@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace LastStandingSheep
 {
-    public class Trigger : InteractableObjectBehavior
-    {
-        
+    public sealed class Trigger : InteractableObjectBehavior
+    {      
     }
 }

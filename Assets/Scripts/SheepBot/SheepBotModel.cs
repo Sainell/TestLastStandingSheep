@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
-using DG.Tweening;
-using System.Collections;
+
 
 namespace LastStandingSheep
 {
@@ -12,6 +11,7 @@ namespace LastStandingSheep
         public GameObject SheepBot { get; private set; }
         public SheepBotData SheepBotData { get; private set; }
         public NavMeshAgent NavMeshAgent { get; private set; }
+        public Animator Animator { get; private set; }
 
         #endregion
 
@@ -24,7 +24,7 @@ namespace LastStandingSheep
             SheepBotData = sheepBotData;
             SheepBotData.SheepBotModel = this;
             NavMeshAgent = prefab.GetComponent<NavMeshAgent>();
-
+            Animator = prefab.GetComponent<Animator>();
             PlatformData.PlatformIsMove += MeshAgentSwitch;
         }
 
@@ -37,6 +37,7 @@ namespace LastStandingSheep
         {
             SheepBotData.Updating();
             SetTarget();
+            Walk();
         }
 
         public void MeshAgentSwitch(bool isActive)
@@ -45,6 +46,31 @@ namespace LastStandingSheep
             {
                 NavMeshAgent.enabled = !isActive;
             }
+        }
+
+        public void Walk()
+        {
+            if (Animator != null)
+            {
+                if (IsMoving())
+                {
+                    Animator.Play("Sheep|Walk");
+                }
+                else
+                {
+                    Animator.Play("SheepIdle");
+                }
+            }
+        }
+
+        private bool IsMoving()
+        {
+            var isMoving = false;
+            if (NavMeshAgent != null)
+            {
+               isMoving =  NavMeshAgent.velocity.magnitude > 0.1f;
+            }
+            return isMoving;
         }
 
         public void SetTarget()

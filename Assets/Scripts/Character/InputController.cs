@@ -1,13 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 namespace LastStandingSheep
 {
     public sealed class InputController : IAwake, IUpdate
     {
-
-
         #region Fields
 
         private readonly GameContext _context;
@@ -20,7 +17,6 @@ namespace LastStandingSheep
         public InputModel InputModel { get; private set; }
         public CharacterModel CharacterModel { get; private set; }
         public FixedJoystick Joystick { get; private set; }
-
 
         #endregion
 
@@ -51,6 +47,7 @@ namespace LastStandingSheep
             InputModel.IsInputMove = false;
             Joystick = GameObject.FindObjectOfType<FixedJoystick>();
             CharacterData.PlayerDie += InputModel.OnDie;
+            JumpButton.JumpButtonEvent += InputModel.Jump;
 
         }
 
@@ -58,40 +55,21 @@ namespace LastStandingSheep
         {
             if (!_context.InputModel.IsDie)
             {
-
+//#if UNITY_EDITOR
+//#endif
+//#if UNITY_ANDROID
+//#endif
                 //InputModel.InputHorizontal = Input.GetAxis("Horizontal");
                 //InputModel.InputVertical = Input.GetAxis("Vertical");
-                //InputModel.InputJump = Input.GetAxis("Jump");
-
-
+                // InputModel.InputJump = Input.GetAxis("Jump");
                 InputModel.InputHorizontal = Joystick.Horizontal;
                 InputModel.InputVertical = Joystick.Vertical;
-#if UNITY_EDITOR
-#endif
-#if UNITY_ANDROID
-                
 
-
-#endif
-                InputModel.InputTotalHorizontal = GetTotalValue(InputModel.InputHorizontal);
-                InputModel.InputTotalVertical = GetTotalValue(InputModel.InputVertical);
                 InputModel.IsInputMove = (InputModel.InputHorizontal != 0 || InputModel.InputVertical != 0) ? true : false;
                 InputModel.IsInputJump = !CharacterModel.CharacterData.IsGrounded;
             }
         }
 
-        private float GetTotalValue(float value)
-        {
-            var totalValue = value > 0.5f ? 1 : value < 0.5f ? -1 : 0;
-
-            if(value>0.5f)
-            {
-                
-            }
-            return totalValue;
-        }
-
-#endregion
+        #endregion
     }
-
 }

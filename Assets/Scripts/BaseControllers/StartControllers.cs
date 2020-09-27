@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
+
 
 namespace LastStandingSheep
 {
@@ -13,16 +12,17 @@ namespace LastStandingSheep
 
         #endregion
 
+
         #region ClassLifeCycles
 
         protected StartControllers()
         {
             _awakeControllers = new List<IAwake>();
             _updateControllers = new List<IUpdate>();
-
         }
 
         #endregion
+
 
         #region Updating
 
@@ -65,6 +65,7 @@ namespace LastStandingSheep
             }
             return this;
         }
+
         #endregion
     }
 }

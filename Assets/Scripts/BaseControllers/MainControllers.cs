@@ -1,6 +1,6 @@
 ﻿namespace LastStandingSheep
 {
-    public class MainControllers : StartControllers
+    public sealed class MainControllers : StartControllers
     {
         #region ClasLifeCycles
 

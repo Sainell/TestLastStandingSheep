@@ -6,9 +6,16 @@ namespace LastStandingSheep
 {
     public sealed class BackButton : MonoBehaviour, IPointerClickHandler
     {
+        #region Fields
+
         private Canvas _menuPrefab;
         private Canvas _interface;
         private GameObject _menu;
+
+        #endregion
+
+
+        #region UnityMethods
 
         public void OnPointerClick(PointerEventData eventData)
         {
@@ -21,5 +28,7 @@ namespace LastStandingSheep
             _menuPrefab = gameObject.transform.parent.parent.GetComponent<Canvas>();
             _interface = GameObject.Find("GameInterface").GetComponent<Canvas>();
         }
+
+        #endregion
     }
 }

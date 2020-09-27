@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Cinemachine;
 
+
 namespace LastStandingSheep
 {
     public sealed class CharacterModel
@@ -13,9 +14,7 @@ namespace LastStandingSheep
         public GameObject MainCamera { get; private set; }
         public CinemachineVirtualCamera VirtualCamera {get; private set;}
         public Animator Animator { get; private set; }
-        
-        
-        
+            
         #endregion
 
 
@@ -36,14 +35,14 @@ namespace LastStandingSheep
 
         #endregion
 
+
         #region Methods
 
         public void Execute()
         {
             CharacterData.Updating();
         }
-
-        
+       
         #endregion
     }
 }

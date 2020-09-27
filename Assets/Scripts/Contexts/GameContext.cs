@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
+
 
 namespace LastStandingSheep
 {
-    public class GameContext : BaseContext
+    public sealed class GameContext : BaseContext
     {
         #region Fields
 
@@ -16,6 +15,7 @@ namespace LastStandingSheep
         public List<SheepBotModel> SheepBotModelList = new List<SheepBotModel>();
 
         public event Action<IInteractable> AddObjectHandler = delegate (IInteractable interactable) { };
+
         private readonly SortedList<InteractableObjectType, List<IInteractable>> _onTriggers;
         private readonly List<IInteractable> _interactables;
 

@@ -1,6 +1,6 @@
 ﻿namespace LastStandingSheep
 {
-    public class MainFixedControllers : StartControllers
+    public sealed class MainFixedControllers : StartControllers
     {
         #region ClasLifeCycles
 
@@ -8,7 +8,7 @@
         {
             Add(new CharacterController(context));
             Add(new InputController(context));
-         //   Add(new SheepBotController(context));
+            Add(new SheepBotController(context));
         }
 
         #endregion

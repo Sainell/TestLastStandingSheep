@@ -1,19 +1,28 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+
 namespace LastStandingSheep
 {
     public sealed class LobbyMenuSettings : MonoBehaviour
     {
+        #region Fields
+
         private Toggle _isMusic;
         private Toggle _isSounds;
         private Toggle _isVibro;
+
+        #endregion
+
 
         #region Properties
 
         public GameSettingsData GameSettingsData { get; private set; }
 
         #endregion
+
+
+        #region UnityMethods
 
         private void Start()
         {
@@ -29,12 +38,25 @@ namespace LastStandingSheep
             UpdateStatistic();
         }
 
+        private void OnDestroy()
+        {
+            GameEventController.WinEvent -= OnWinCounter;
+            CharacterData.PlayerDie -= OnLostCounter;
+            MusicToggleButton.SwitchMusicEvent -= OnSwitchMusic;
+            SoundsToggleButton.SwitchSoundsEvent -= OnSwitchSounds;
+            VibroToggleButton.SwitchVibroEvent -= OnSwitchVibro;
+        }
+
+        #endregion
+
+
+        #region Methods
+
         private void UpdateStatistic()
         {
             _isMusic.isOn = GameSettingsData.isMusic;
             _isSounds.isOn = GameSettingsData.isSound;
             _isVibro.isOn = GameSettingsData.isVibro;
-
         }
 
         private void OnWinCounter()
@@ -67,13 +89,6 @@ namespace LastStandingSheep
             UpdateStatistic();
         }
 
-        private void OnDestroy()
-        {
-            GameEventController.WinEvent -= OnWinCounter;
-            CharacterData.PlayerDie -= OnLostCounter;
-            MusicToggleButton.SwitchMusicEvent -= OnSwitchMusic;
-            SoundsToggleButton.SwitchSoundsEvent -= OnSwitchSounds;
-            VibroToggleButton.SwitchVibroEvent -= OnSwitchVibro;
-        }
+        #endregion
     }
 }

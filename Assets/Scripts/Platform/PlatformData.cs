@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using DG.Tweening;
 using System;
-using System.Collections;
+
 
 namespace LastStandingSheep
 {
     [CreateAssetMenu(fileName = "NewData", menuName = "CreateData/PlatformData", order = 0)]
     public sealed class PlatformData : ScriptableObject
     {
+        #region Fields
+
         public static Action<bool> PlatformIsMove;
 
         [SerializeField]
@@ -23,21 +25,26 @@ namespace LastStandingSheep
         private bool _isMoving;
         private bool _isHide;
 
+        #endregion
+
+
+        #region Unity Methods
+
         private void OnEnable()
         {
-            _index = 1;
-            _time = 0;
-            _isMoving = false;
-            _isRespawn = false;
-            _isHide = false;
+            ResetPlatform();
         }
+
+        #endregion
+
+
+        #region Methods
 
         public void Updating()
         {
             Timer();
             PlatformAction();
         }
-
 
         private void Timer()
         {
@@ -96,7 +103,7 @@ namespace LastStandingSheep
             var randomIndex = UnityEngine.Random.Range(0, PlatformStruct.SpawnPoints.Length);
             PlatformModel.Platform.transform.GetChild(index).gameObject.SetActive(isActive);
             PlatformModel.Platform.transform.GetChild(0).gameObject.SetActive(isActive);
-            PlatformModel.Platform.transform.position = PlatformStruct.SpawnPoints[index];
+            PlatformModel.Platform.transform.position = PlatformStruct.SpawnPoints[randomIndex];
         }
 
         private void StartMove()
@@ -109,7 +116,15 @@ namespace LastStandingSheep
             sequence.Append(PlatformModel.Ocean.transform.DOMoveY(25, MoveTime)).AppendInterval(2f).Append(PlatformModel.Ocean.transform.DOMoveY(15, MoveTime));
         }
 
+        public void ResetPlatform()
+        {
+            _index = 1;
+            _time = 0;
+            _isMoving = false;
+            _isRespawn = false;
+            _isHide = false;
+        }
 
-        
+        #endregion
     }
 }

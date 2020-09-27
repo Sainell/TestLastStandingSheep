@@ -1,12 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+
 
 namespace LastStandingSheep
 {
     public sealed class GameMenuSwitcher : MonoBehaviour
     {
+        #region Fields
+
         private GameObject _backButton;
         private GameObject _restartButton;
         private GameObject _nextButton;
@@ -14,6 +14,11 @@ namespace LastStandingSheep
         private GameObject _winText;
         private GameObject _lostText;
         private Canvas _canvasMenu;
+
+        #endregion
+
+
+        #region UnityMethods
 
         private void Awake()
         {           
@@ -29,6 +34,17 @@ namespace LastStandingSheep
             GameEventController.WinEvent += WinMenuSet;
         }
 
+        private void OnDestroy()
+        {
+            CharacterData.PlayerDie -= LostMenuSet;
+            GameEventController.WinEvent -= WinMenuSet;
+        }
+
+        #endregion
+
+
+        #region Methods
+
         private void WinMenuSet()
         {
             _backButton.SetActive(false);
@@ -37,8 +53,8 @@ namespace LastStandingSheep
             _winText.SetActive(true);
             _lostText.SetActive(false);
 
-
         }
+
         private void LostMenuSet()
         {
             _backButton.SetActive(false);
@@ -47,6 +63,7 @@ namespace LastStandingSheep
             _winText.SetActive(false);
             _lostText.SetActive(true);
         }
+
         private void ResetMenu()
         {
             _backButton.SetActive(true);
@@ -57,10 +74,6 @@ namespace LastStandingSheep
             _canvasMenu.enabled = false;
         }
 
-        private void OnDestroy()
-        {
-            CharacterData.PlayerDie -= LostMenuSet;
-            GameEventController.WinEvent -= WinMenuSet;
-        }
+        #endregion
     }
 }

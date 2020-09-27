@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 6820969236230880671}
   - component: {fileID: 4685615793734437686}
   - component: {fileID: 3614849932155310403}
+  - component: {fileID: 5009395934879346014}
   m_Layer: 5
   m_Name: Jump
   m_TagString: Untagged
@@ -200,6 +201,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &5009395934879346014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5623398777486589693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff077dd8367b824cbfbe9a2d189ac9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7057498449628745440
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.AI;
+
 
 namespace LastStandingSheep
 {
@@ -15,7 +15,6 @@ namespace LastStandingSheep
 
         public void Updating()
         {
-
         }
     }
 }
