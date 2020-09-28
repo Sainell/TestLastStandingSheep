@@ -9,7 +9,7 @@ namespace LastStandingSheep
         #region Fields
 
         private Canvas _lobbyMenu;
-        private const int SCENE_NUMBER_1 = 0;
+        private const int SCENE_NUMBER_1 = 1;
 
         #endregion
 

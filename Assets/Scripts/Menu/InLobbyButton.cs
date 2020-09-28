@@ -9,7 +9,7 @@ namespace LastStandingSheep
     {
         #region Fields
 
-        private const int SCENE_LOBBY = 1;
+        private const int SCENE_LOBBY = 0;
 
 
         #endregion
